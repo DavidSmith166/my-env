@@ -9,3 +9,7 @@ Current set of tools:
 - rust-analyzer
 - pylsp
 - docker-langserver
+
+Install:
+- first intall nix package manager
+- install home manager
