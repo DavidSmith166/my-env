@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+rm -r ~/.config/home-manager
 mkdir -p ~/.config/home-manager
-sed "s/{username}/${USER}/" home-manager/home.nix > ~/.config/home-manager/home.nix
-cp -r home-manager/dotfiles ~/.config/home-manager/dotfiles
+cp -r home-manager ~/.config/
+sed -i "s/{username}/${USER}/" ~/.config/home-manager/home.nix

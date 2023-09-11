@@ -21,7 +21,7 @@
     python310Full python310Packages.python-lsp-server
 
     #tools
-    helix fd eza ripgrep zellij
+    helix fd eza ripgrep zellij starship bat
 
     #nix
     nil  
@@ -31,23 +31,14 @@
 
   ];
 
-  # install fish config
-  programs.fish.shellInit = (builtins.readFile "${config.home.homeDirectory}/.config/home-manager/dotfiles/config/fish/config.fish");
-
-
-  # Install .config files
-  #home.file.".config/fish" = {
-	#source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager//dotfiles/config/fish";
-	#recursive = true;
-  #};
-  home.file.".config/helix" = { 
-	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/config/helix";
+ home.file.".config/helix" = { 
+	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/helix";
   };
   home.file.".config/zellij" = { 
-	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/config/zellij";
+	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/zellij";
   };
   home.file.".config/nix" = {
-	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/config/nix";
+	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/dotfiles/nix";
   };
  
   # Install bashrc 
@@ -61,8 +52,14 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = false;
 
-  #Fish installation
+  # Fish installation
   programs.fish.enable = true;
+  programs.fish.shellInit = (builtins.readFile "${config.home.homeDirectory}/.config/home-manager/dotfiles/fish/config.fish");
+  programs.fish.shellAliases = {
+    ls = "eza";
+    tree = "eza --tree";
+    cat = "bat"
+  }
 
   #Allow nix-controlled fonts to be discovered
   fonts.fontconfig.enable = true;

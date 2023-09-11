@@ -1,2 +1,4 @@
+theme = "snazzy"
+
 [editor]
 true-color = true
