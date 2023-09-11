@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
 
     #fonts
-    nerdfonts.override { fonts = [ "FiraCode" ]; }
+    (nerdfonts.override { fonts = [ "Hack" ]; })
     
     #rust
     cargo rustc rust-analyzer rustfmt
