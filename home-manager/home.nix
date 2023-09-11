@@ -58,8 +58,8 @@
   programs.fish.shellAliases = {
     ls = "eza";
     tree = "eza --tree";
-    cat = "bat"
-  }
+    cat = "bat";
+  };
 
   #Allow nix-controlled fonts to be discovered
   fonts.fontconfig.enable = true;
