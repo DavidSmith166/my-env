@@ -21,7 +21,7 @@
     python310Full python310Packages.python-lsp-server
 
     #tools
-    helix fd exa ripgrep zellij
+    helix fd eza ripgrep zellij
 
     #nix
     nil  

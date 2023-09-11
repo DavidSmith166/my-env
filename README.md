@@ -3,7 +3,7 @@ Current set of tools:
 - zellij
 - starship
 - fish
-- exa
+- eza
 - ripgrep
 - fd-find
 - rust-analyzer
